@@ -1,1 +1,372 @@
 
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astronia - Universo Infinito</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#020617;
+color:white;
+overflow-x:hidden;
+font-family:Inter,sans-serif;
+}
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-2;
+background:#020617;
+}
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 4s infinite;
+}
+
+@keyframes twinkle{
+0%,100%{opacity:.2}
+50%{opacity:1}
+}
+
+.planet{
+position:fixed;
+border-radius:50%;
+filter:blur(1px);
+z-index:-1;
+}
+
+.planet1{
+width:120px;
+height:120px;
+background:linear-gradient(orange,red);
+top:100px;
+right:-40px;
+animation:orbit1 30s linear infinite;
+}
+
+.planet2{
+width:80px;
+height:80px;
+background:linear-gradient(cyan,blue);
+bottom:120px;
+left:-20px;
+animation:orbit2 20s linear infinite;
+}
+
+@keyframes orbit1{
+50%{
+transform:translateY(50px) rotate(180deg);
+}
+}
+
+@keyframes orbit2{
+50%{
+transform:translateY(-50px) rotate(-180deg);
+}
+}
+
+.glass{
+backdrop-filter:blur(15px);
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover{
+transform:translateY(-10px);
+transition:.4s;
+}
+
+.hero{
+background:
+linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.8)),
+url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564');
+background-size:cover;
+background-position:center;
+}
+
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="planet planet1"></div>
+<div class="planet planet2"></div>
+
+<nav class="fixed top-0 w-full z-50 glass">
+<div class="max-w-7xl mx-auto flex justify-between items-center p-5">
+
+<h1 class="text-3xl font-bold text-cyan-400">
+🚀 ASTRONIA
+</h1>
+
+<div class="space-x-6">
+<a href="#estrelas">Estrelas</a>
+<a href="#planetas">Planetas</a>
+<a href="#teorias">Teorias</a>
+<a href="#conspiracoes">Conspirações</a>
+<a href="#sapos">Sapos</a>
+<a href="#papoilas">Papoilas</a>
+</div>
+
+</div>
+</nav>
+
+<section class="hero min-h-screen flex items-center justify-center text-center">
+
+<div>
+
+<h1 class="text-7xl font-black mb-6">
+EXPLORA O UNIVERSO
+</h1>
+
+<p class="text-2xl text-slate-300 max-w-3xl">
+Uma viagem pelas estrelas, planetas, mistérios cósmicos,
+teorias científicas e curiosidades do espaço.
+</p>
+
+</div>
+
+</section>
+
+<section id="estrelas" class="max-w-7xl mx-auto py-24">
+
+<h2 class="text-5xl font-bold mb-10">
+⭐ Estrelas Famosas
+</h2>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="glass card rounded-3xl overflow-hidden">
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg">
+<div class="p-6">
+<h3 class="text-3xl font-bold">Sol</h3>
+<p>
+A estrela responsável pela vida na Terra.
+Representa 99.8% da massa do Sistema Solar.
+</p>
+</div>
+</div>
+
+<div class="glass card rounded-3xl overflow-hidden">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Sirius_A_and_B_Hubble_photo.jpg">
+<div class="p-6">
+<h3 class="text-3xl font-bold">Sirius</h3>
+<p>
+A estrela mais brilhante do céu noturno.
+Está a cerca de 8.6 anos-luz da Terra.
+</p>
+</div>
+</div>
+
+<div class="glass card rounded-3xl overflow-hidden">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Betelgeuse_star.jpg">
+<div class="p-6">
+<h3 class="text-3xl font-bold">Betelgeuse</h3>
+<p>
+Uma supergigante vermelha que poderá explodir
+como supernova no futuro.
+</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="planetas" class="max-w-7xl mx-auto py-24">
+
+<h2 class="text-5xl font-bold mb-10">
+🪐 Planetas
+</h2>
+
+<div class="grid md:grid-cols-4 gap-6">
+
+<div class="glass p-6 rounded-3xl">
+<h3>Mercúrio</h3>
+<p>Temperaturas extremas e sem atmosfera significativa.</p>
+</div>
+
+<div class="glass p-6 rounded-3xl">
+<h3>Vénus</h3>
+<p>Atmosfera tóxica e efeito estufa extremo.</p>
+</div>
+
+<div class="glass p-6 rounded-3xl">
+<h3>Terra</h3>
+<p>Único planeta conhecido com vida.</p>
+</div>
+
+<div class="glass p-6 rounded-3xl">
+<h3>Marte</h3>
+<p>Possível destino de futuras colónias humanas.</p>
+</div>
+
+<div class="glass p-6 rounded-3xl">
+<h3>Júpiter</h3>
+<p>Gigante gasoso com centenas de luas.</p>
+</div>
+
+<div class="glass p-6 rounded-3xl">
+<h3>Saturno</h3>
+<p>Conhecido pelos seus anéis impressionantes.</p>
+</div>
+
+<div class="glass p-6 rounded-3xl">
+<h3>Urano</h3>
+<p>Roda praticamente de lado.</p>
+</div>
+
+<div class="glass p-6 rounded-3xl">
+<h3>Neptuno</h3>
+<p>Os ventos mais rápidos do Sistema Solar.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="teorias" class="max-w-7xl mx-auto py-24">
+
+<h2 class="text-5xl font-bold mb-10">
+🔬 Teorias Científicas
+</h2>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="glass p-8 rounded-3xl">
+<h3>Big Bang</h3>
+<p>
+O Universo terá começado há cerca de
+13.8 mil milhões de anos.
+</p>
+</div>
+
+<div class="glass p-8 rounded-3xl">
+<h3>Matéria Escura</h3>
+<p>
+Matéria invisível que influencia galáxias
+através da gravidade.
+</p>
+</div>
+
+<div class="glass p-8 rounded-3xl">
+<h3>Multiverso</h3>
+<p>
+Hipótese de existirem múltiplos universos.
+Ainda sem evidências observacionais.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="conspiracoes" class="max-w-7xl mx-auto py-24">
+
+<h2 class="text-5xl font-bold mb-10">
+👽 Conspirações Populares
+</h2>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="glass p-8 rounded-3xl">
+<h3>Área 51</h3>
+<p>
+Algumas pessoas acreditam que tecnologia
+alienígena é estudada ali.
+Não existem provas públicas que confirmem isso.
+</p>
+</div>
+
+<div class="glass p-8 rounded-3xl">
+<h3>Base na Lua</h3>
+<p>
+Teoria não comprovada que afirma existirem
+estruturas secretas na Lua.
+</p>
+</div>
+
+<div class="glass p-8 rounded-3xl">
+<h3>Visitantes Extraterrestres</h3>
+<p>
+A existência de vida extraterrestre é possível,
+mas não há evidências confirmadas de visitas à Terra.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="sapos" class="max-w-7xl mx-auto py-24">
+
+<h2 class="text-5xl font-bold mb-10">
+🐸 Sapos Cósmicos
+</h2>
+
+<p class="text-xl">
+Secção artística imaginando anfíbios exploradores
+de nebulosas e buracos negros.
+</p>
+
+</section>
+
+<section id="papoilas" class="max-w-7xl mx-auto py-24">
+
+<h2 class="text-5xl font-bold mb-10">
+🌺 Papoilas Galácticas
+</h2>
+
+<p class="text-xl">
+Flores imaginárias alimentadas pela radiação
+de estrelas distantes.
+</p>
+
+</section>
+
+<footer class="text-center p-10 text-slate-400">
+Astronia © 2026
+</footer>
+
+<script>
+
+for(let i=0;i<250;i++){
+
+const star=document.createElement('div');
+
+star.classList.add('star');
+
+const size=Math.random()*3;
+
+star.style.width=size+'px';
+star.style.height=size+'px';
+
+star.style.left=Math.random()*100+'%';
+star.style.top=Math.random()*100+'%';
+
+star.style.animationDelay=Math.random()*5+'s';
+
+document.getElementById('stars').appendChild(star);
+
+}
+
+</script>
+
+</body>
+</html>
